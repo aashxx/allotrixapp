@@ -204,7 +204,7 @@ cursor: pointer;
   height: auto;
   align-items: center;
   background-color: rgba(239, 64, 54, 1);
-  padding-bottom: 40px;
+  padding-bottom: 50px;
   animation: itemFade 0.5s ease-in-out forwards;
 
 
@@ -230,6 +230,7 @@ cursor: pointer;
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  padding-bottom: 50px;
   animation: itemFade 0.5s ease-in-out forwards;
 
 }
@@ -472,7 +473,7 @@ select {
 
 }
 
-/* Styles for the message paragraph */
+/* Styless for the message paragraph */
 .popup-content p {
   font-size: 18px;
   margin-bottom: 20px;
