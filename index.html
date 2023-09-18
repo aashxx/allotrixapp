@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Automation</title>
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), fullscreen=()">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  
+
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="logo">
+      <a href="#"><img class="logo-img" src="assets/logo2.png"></a>
+    </div>
+    <ul class="nav-items">
+      <li class="nav-item" id="home">Home</li>
+      <li class="nav-item" id="about">How Does It Work?</li>
+      <li class="nav-item" id="pricing">Pricing</li>
+      <li class="nav-item" id="contact">Contact</li>
+      <li class="nav-item" style="color: red;" id="download">DOWNLOAD</li>
+    </ul>
+  </div>
+  <div class="content-body">
+    <div class="hero">
+      <h1 class="heading">Make <b>One-Month</b> processes,</h1>
+      <h1 class="heading"><b>One-Second</b> using <b class="hero-tag">allotrix</b></h1>
+      <p class="hero-p">"Every once in a while, a new technology, an old problem, and a big idea turn into an
+        innovation."</p>
+
+      <div class="hero-button-container">
+        <a href="#" id = "pre-order" class="btn" style="border: 2px solid rgba(239, 64, 54, 1); padding-left: 80px; padding-right: 80px; background: transparent;">Pre Order</a>
+        <a href="#" id= 'hero-download' class="btn filled-button" style="padding-left: 80px; padding-right: 80px;">Download</a>
+      </div>
+    </div>
+    <h6 class="subheading">Why Choose <b class="hero-tag" style="text-decoration: underline; text-decoration-color: rgba(239, 64, 54, 1); color: white; font-weight: 100;">allotrix</b>?</h6>
+    <p class="hero-p" style="text-align: center; font-family: poppins; font-size: 1.3em;">We Ensure You <b class="hero-tag" style="font-weight: 100;">Automate and Relax</b></p>
+
+    <!-- Info Section Container -->
+    <div class="info-section-container">
+      <!-- Section 1 -->
+      <div class="info-section">
+        <img src="assets/automate.png" alt="Logo" class="info-logo">
+        <h2 class="info-subtitle">Effortless Alotting </h2>
+        <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae urna ac justo bibendum elementum.</p>
+      </div>
+      <!-- Section 2 -->
+      <div class="info-section">
+        <img src="assets/gforms.png" alt="Logo" class="info-logo">
+        <h2 class="info-subtitle">Scale your mun to unimaginable heights with minimal cost</h2>
+        <p class="info">Suspendisse potenti. Curabitur a diam non metus cursus interdum. Vestibulum varius ex sit amet justo venenatis.</p>
+      </div>
+      <!-- Section 3 -->
+      <div class="info-section">
+        <img src="assets/email.webp" alt="Logo" class="info-logo">
+        <h2 class="info-subtitle">Tried and Tested</h2>
+        <p class="info">Fusce vehicula tortor ut elit pharetra, in interdum urna aliquam. Nullam condimentum in ex eu pellentesque.</p>
+      </div>
+    </div>
+
+    <!-- Promo Video Container -->
+    <div class="promo-section">
+      <h1 class="subheading" style="font-family: poppins; padding: 20px; color: #333;">Cut the <b style="font-weight: 500;">Labour</b></h1>
+      <div id="video" style = "background-image: url(assets/allotrix.jpeg); background-size: cover; background-position: center; display: flex; align-items: end;justify-content: center; ">
+      <h1 class ="subheading" style="font-weight: bold;">Coming Soon!</h1></div>
+
+      <!--<iframe id="video" src="https://www.youtube.com/embed/S3L1Kw087JI?si=xgeREY9lb5nM0snR" 
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen></iframe> -->
+    </div>
+
+    <!-- Subscription Container -->
+    <div class="subscription-container">
+      <h6 class="subheading" style="font-family: poppins; color: rgba(239, 64, 54, 1);">Save Time By Getting the Best Deal</h6>
+      <p class="hero-p" style="text-align: center; font-family: poppins; font-size: 1.3em;">Choose what's best for you</p>
+      <div class="offers">
+        <!-- Subscription Card 1 -->
+        <div class="subscription-card outlined-card">
+          <h2 class="offer-title">Standard Plan</h2>
+          <p class="offer-options">Automates country allotments</p>
+          <p class="offer-options">Country matrix manipulation</p>
+          <p class="offer-options">24/7 tech support</p>
+          <p class="offer-empty">  </p>
+          <p class="offer-empty">  </p>
+
+
+          <h3 class="offer-title">INR 5000/month</h3>
+          <a href="#"><button id="standard-sub-btn" class="btn">Subscribe</button></a>
+        </div>
+        <!-- Subscription Card 2 -->
+        <div class="subscription-card filled-card">
+          <h2 class="offer-title">Premium Plan</h2>
+          <p class="offer-options">Automates country allotments</p>
+          <p class="offer-options">Country matrix manipulation</p>
+          <p class="offer-options">24/7 technical support</p>
+          <p class="offer-options">Provides detailed statistics</p>
+          <p class="offer-options">Auto sends professional emails</p>
+
+          <h3 class="offer-title">INR 7000/month</h3>
+          <a href="#"><button id="premium-sub-btn" class="btn" style="background-color: white; color: #333;">Subscribe</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Container -->
+    <div class="contact-container">
+      <h6 class="subheading">Contact <b class="hero-tag" style="text-decoration: underline; text-decoration-color: rgba(239, 64, 54, 1); color: white; font-weight: 100;">Us</b></h6>
+      <form action="#" method="post">
+        <div class="input-group">
+          <div class="input-item">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="input-item">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="message-container">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button id = "form-button" class="btn">Submit</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <h3 class="app-name">Allotrix</h3>
+        <div class="social-icons">
+          <a href="#"><img src="assets/facebook-icon.png" alt="Facebook"></a>
+          <a href="#"><img src="assets/twitter-icon.webp" alt="Twitter"></a>
+          <a href="#"><img src="assets/Instagram-Icon.png" alt="Instagram"></a>
+          <a href="#"><img src="assets/youtube-icon.png" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js" type="module"></script>
+  
+</body>
+</html>
