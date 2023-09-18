@@ -110,13 +110,7 @@ function preOrderScreen(){
 
 
 
-  const backgroundText2 = document.createElement("h1");
-  backgroundText2.classList.add("background-text");
-  backgroundText2.textContent = "allotrix";
-  backgroundText2.style.bottom = "-446px";
-  backgroundText2.style.right = "-161px";
-
-  preOrderScreenDiv.appendChild(backgroundText2);
+  
 
   const backBtnContainer= document.createElement("div");
   backBtnContainer.classList.add("back-btn-container");
