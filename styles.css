@@ -479,6 +479,23 @@ select {
   margin-bottom: 20px;
 }
 
+
+.background-text {
+  position: fixed;
+  top: 525px;
+  left: 18px;
+  width: 100%;
+  height: 100%;
+  font-size: 20em;
+  font-weight: bold;
+  color: transparent;
+  text-align: center;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  text-shadow: 3px 2px 12px rgba(104, 38, 33, 1);
+}
+
 @keyframes itemFade {
   from {
     opacity: 0;
