@@ -173,7 +173,8 @@ cursor: pointer;
   background-size: cover;
 }
 .info-subtitle {
-  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif ;
+  font-size: 27px;
   color: rgba(239, 64, 54, 1);
 }
 .info {
