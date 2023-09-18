@@ -100,6 +100,8 @@ cursor: pointer;
   align-items: center;
   display: flex;
   flex-direction: column;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 .hero{
   border-radius: 21px;
@@ -110,6 +112,7 @@ cursor: pointer;
   display: flex;
   flex-direction: column;
   text-align: center;
+  animation: itemFade 0.5s ease-in-out forwards;
   justify-content: center;
 
 }
@@ -117,11 +120,15 @@ cursor: pointer;
 .heading{
   font-size: 50px;
   font-weight: 300; 
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 .subheading{
   font-family: poppins;
   font-size: 45px;
   font-weight: 300; 
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 .hero-tag{
   color: rgba(239, 64, 54, 1);
@@ -147,6 +154,8 @@ cursor: pointer;
   gap:40px;
   height: auto;
   padding-top: 40px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
   
 }
 .info-section-container {
@@ -154,6 +163,8 @@ cursor: pointer;
   max-width: 75%;
   margin-top: 40px;
   margin-bottom: 40px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 
 
 }
@@ -166,6 +177,8 @@ cursor: pointer;
   gap: 20px;
   align-items: center;
   justify-content: center;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 .info-logo {
   width: auto; 
@@ -176,6 +189,7 @@ cursor: pointer;
   font-family: Arial, Helvetica, sans-serif ;
   font-size: 28px;
   color: rgba(239, 64, 54, 1);
+  
 }
 .info {
   font-size: 16px;
@@ -191,6 +205,8 @@ cursor: pointer;
   align-items: center;
   background-color: rgba(239, 64, 54, 1);
   padding-bottom: 40px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 
 }
 #video{
@@ -198,18 +214,24 @@ cursor: pointer;
   min-width:75%;
   min-height: 65vh;
   border-radius: 22px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .subscription-container{
   padding-top: 25px;
-
+  animation: itemFade 0.5s ease-in-out forwards;
   display: flex;
   flex-direction: column;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 .offers{
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .subscription-card {
@@ -221,6 +243,8 @@ cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 22px;
   text-align: left;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 
 }
 .offer-title{
@@ -234,10 +258,13 @@ cursor: pointer;
   color: green; 
   font-size: 1.7em;
   font-weight: bold; 
+
 }
 
 .offer-options{
   padding: 5px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
   
 }
 .offer-empty::before {
@@ -255,17 +282,22 @@ cursor: pointer;
   box-shadow: 5px 3px 10px 2px #333; 
   scale: 1.05;
 
+
   
 }
 
 .outlined-card {
   background-color: transparent;
   border: 2px solid rgba(104, 38, 33, 1);
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .filled-card {
   background: linear-gradient(to bottom, rgba(104, 38, 33, 1), #151514);
   color: white;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 
@@ -277,13 +309,18 @@ cursor: pointer;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 form {
   display: flex;
   flex-direction: column;
   width: 60%;
-  gap: 20px;
+  gap: 5px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
+
 }
 
 .input-group {
@@ -295,11 +332,15 @@ form {
 .input-item {
     flex: 1;
     margin-right: 10px;
+    animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 input,
@@ -309,6 +350,8 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .footer {
@@ -317,17 +360,24 @@ textarea {
     padding: 20px;
     width: 100%;
     text-align: center;
+    animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: itemFade 0.5s ease-in-out forwards;
+
+
 }
 
 .app-name {
     font-size: 24px;
     margin-bottom: 10px;
+    animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .social-icons {
@@ -341,10 +391,14 @@ textarea {
     width: 25px;
     height: auto;
     transition: color 0.3s ease;
+    animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .social-icons img:hover {
     scale: 1.05; 
+    animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .preOrderScreenDiv {
@@ -359,6 +413,8 @@ textarea {
   height: 100%;
   background-color: rgba(0, 0, 0, 1); 
   z-index: 999; 
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 .back-btn-container{
@@ -367,6 +423,8 @@ textarea {
   width: 100%;
   flex-direction: column;
   align-items: start;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 input[type="text"],
@@ -379,6 +437,8 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 /* pop up*/
@@ -395,6 +455,8 @@ select {
     gap: 10px;
     background-color: #151514;
     z-index: 999; 
+    animation: itemFade 0.5s ease-in-out forwards;
+
   }
 
 /* Styles for the popup content */
@@ -406,10 +468,23 @@ select {
   color:rgb(255, 255, 255);
   box-shadow: 0px 0px 11px 15px rgb(59, 22, 22);
   text-align: center;
+  animation: itemFade 0.5s ease-in-out forwards;
+
 }
 
 /* Styles for the message paragraph */
 .popup-content p {
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+@keyframes itemFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
