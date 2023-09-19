@@ -23,6 +23,8 @@ const navPricing = document.getElementById("pricing");
 const navContact = document.getElementById("contact");
 const download = document.getElementById("download");
 
+
+
 navHome.addEventListener("click", (e)=>{
   e.preventDefault();
   const targetSection = document.querySelector(".hero");

@@ -120,6 +120,7 @@ cursor: pointer;
 .heading{
   font-size: 50px;
   font-weight: 300; 
+  text-align: center;
   animation: itemFade 0.5s ease-in-out forwards;
 
 }
@@ -127,6 +128,7 @@ cursor: pointer;
   font-family: poppins;
   font-size: 45px;
   font-weight: 300; 
+  text-align: center;
   animation: itemFade 0.5s ease-in-out forwards;
 
 }
@@ -134,15 +136,12 @@ cursor: pointer;
   color: rgba(239, 64, 54, 1);
 }
 
-.hero-p-div{
-  width: 60%;
-}
 .hero-p{
-  padding-top: 3px;
+  padding-top: 5px;
   font-weight: 300;
   color: rgba(133, 133, 133, 1);
-  padding-left: 30%;
-  padding-right: 30%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 
@@ -490,4 +489,112 @@ select {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.mobile-navbar{
+  display: none;
+}
+
+/* media query */
+
+/*tablet*/
+@media (max-width: 768px) {
+
+    .nav-items {
+      display: none;
+  }
+
+  .hero{
+    min-height: 40vh;
+  }
+  .heading{
+    font-size: 40px;
+  }
+  .subheading{
+    font-size: 35px;
+  }
+  .hero-p{
+    font-size: 16px;
+  }
+  .info-logo{
+    height: 75px;
+  }
+  .info-subtitle{
+    font-size: 22px;
+  }
+  #video{
+    min-height: 35vh;
+  }
+  .offer-options{
+    font-size: 16px;
+  }
+  .offer-empty::before{
+    font-size: 16px;
+  }
+
+}
+
+/*mobile*/
+@media (max-width: 480px) {
+  .nav-items {
+    display: none;
+}
+
+.info-section-container{
+  flex-direction: column;
+}
+.promo-section{
+  flex-direction: column;
+
+}
+.hero-button-container{
+  flex-direction: column;
+
+}
+.offers{
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.subscription-card{
+  width: 100%;
+
+}
+.contact-section{
+  flex-direction: column;
+
+}
+.hero{
+  flex-direction: column;
+  padding: 10px;
+  min-height: 40vh;
+}
+.heading{
+  font-size: 35px;
+}
+.subheading{
+  font-size: 25px;
+}
+.hero-p{
+  font-size: 16px;
+}
+.hero-tag{
+  font-size: 16px;
+}
+
+.info-logo{
+  height: 75px;
+}
+.info-subtitle{
+  font-size: 22px;
+}
+#video{
+  min-height: 25vh;
+}
+.offer-options{
+  font-size: 16px;
+}
+.offer-empty::before{
+  font-size: 16px;
+}
 }
