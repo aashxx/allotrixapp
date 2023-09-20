@@ -24,6 +24,30 @@ const navContact = document.getElementById("contact");
 const download = document.getElementById("download");
 
 
+//----nav
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const navItems = document.querySelector('.nav-items');
+const closeBtn =  document.getElementById("close-btn")
+const navCont = document.querySelector('nav');
+
+mobileMenuButton.addEventListener('click', () => {
+    navItems.style.display = "block";
+    closeBtn.style.display = "block";
+    navCont.style.display = "flex";
+    navCont.style.flexDirection = "columb";
+    navCont.style.alignItems = "center";
+
+
+
+    closeBtn.addEventListener("click", ()=>{
+      navItems.style.display = "none";
+      navCont.style.display = "flex";
+
+    })
+
+});
+//-----
+
 
 navHome.addEventListener("click", (e)=>{
   e.preventDefault();
@@ -151,9 +175,6 @@ function preOrderScreen(){
 // Create the form
 const form = document.createElement('form');
 form.style.width = "100%";
-form.style.paddingLeft =  "5em";
-form.style.paddingTop =  "2em";
-form.style.paddingRight =  "5em";
 
 // Create Name input
 const nameInput = document.createElement('input');

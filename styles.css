@@ -150,7 +150,7 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:40px;
+  gap:20px;
   height: auto;
   padding-top: 40px;
   animation: itemFade 0.5s ease-in-out forwards;
@@ -215,6 +215,14 @@ cursor: pointer;
   border-radius: 22px;
   animation: itemFade 0.5s ease-in-out forwards;
 
+
+}
+
+.form{
+  width: 100%;
+  padding-left: 5em;
+  padding-top: 2em;
+  padding-right: 5em;
 }
 
 .subscription-container{
@@ -478,7 +486,9 @@ select {
   margin-bottom: 20px;
 }
 
-
+#close-btn{
+  display: none;
+}
 
 @keyframes itemFade {
   from {
@@ -491,8 +501,8 @@ select {
   }
 }
 
-.mobile-navbar{
-  display: none;
+.mobile-menu-button{
+    display: none;
 }
 
 /* media query */
@@ -500,9 +510,27 @@ select {
 /*tablet*/
 @media (max-width: 768px) {
 
-    .nav-items {
-      display: none;
-  }
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.nav-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.mobile-menu-button {
+    display: block;
+    font-size: 30px;
+}
 
   .hero{
     min-height: 40vh;
@@ -554,7 +582,7 @@ select {
 .offers{
   flex-direction: column;
   width: 100%;
-  gap: 10px;
+  gap: 30px;
 }
 .subscription-card{
   width: 100%;
@@ -569,6 +597,10 @@ select {
   padding: 10px;
   min-height: 40vh;
 }
+.form{
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
 .heading{
   font-size: 35px;
 }
@@ -578,10 +610,21 @@ select {
 .hero-p{
   font-size: 16px;
 }
-.hero-tag{
-  font-size: 16px;
-}
+.input-group{
+  flex-direction: column;
+  padding: 0px;
 
+}
+.input-item{
+  margin-right: 0px
+}
+.hero-tag{
+  font-size: 35px;
+}
+.contact-container{
+  padding: 0px;
+  margin-right: 0px
+}
 .info-logo{
   height: 75px;
 }
