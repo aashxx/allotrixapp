@@ -29,3 +29,39 @@ window.onload =  function () {
   });
   observer.observe(element);
 };
+
+const navHome = document.getElementById("home");
+const navAbout = document.getElementById("why-choose-allotrix");
+const navPricing = document.getElementById("pricing");
+const navContact = document.getElementById("contact");
+const download = document.getElementById("download");
+
+
+
+navHome.addEventListener("click", (e)=>{
+  e.preventDefault();
+  const targetSection = document.querySelector(".hero");
+  targetSection.scrollIntoView({ behavior: "smooth" });
+})
+
+navAbout.addEventListener("click", (e)=>{
+  e.preventDefault();
+  const targetSection = document.querySelector(".info-section-container");
+  targetSection.scrollIntoView({ behavior: "smooth" });
+})
+
+navPricing.addEventListener("click", (e)=>{
+  e.preventDefault();
+  const targetSection = document.querySelector(".subscription-container");
+  targetSection.scrollIntoView({ behavior: "smooth" });
+})
+
+navContact.addEventListener("click", (e)=>{
+  e.preventDefault();
+  const targetSection = document.querySelector(".contact-container");
+  targetSection.scrollIntoView({ behavior: "smooth" });
+})
+
+download.addEventListener("click", (e)=>{
+  e.preventDefault();
+})
