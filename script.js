@@ -32,6 +32,7 @@ window.onload =  function () {
 
 const navHome = document.getElementById("home");
 const navAbout = document.getElementById("why-choose-allotrix");
+const features = document.getElementById("allotrix-features");
 const navPricing = document.getElementById("pricing");
 const navContact = document.getElementById("contact");
 const download = document.getElementById("download");
@@ -46,15 +47,22 @@ navHome.addEventListener("click", (e)=>{
 
 navAbout.addEventListener("click", (e)=>{
   e.preventDefault();
-  const targetSection = document.querySelector(".info-section-container");
+  const targetSection = document.querySelector(".why-choose");
   targetSection.scrollIntoView({ behavior: "smooth" });
 })
 
 navPricing.addEventListener("click", (e)=>{
   e.preventDefault();
-  const targetSection = document.querySelector(".subscription-container");
+  const targetSection = document.querySelector(".features");
   targetSection.scrollIntoView({ behavior: "smooth" });
 })
+
+navPricing.addEventListener("click", (e)=>{
+  e.preventDefault();
+  const targetSection = document.querySelector("#pricing");
+  targetSection.scrollIntoView({ behavior: "smooth" });
+})
+
 
 navContact.addEventListener("click", (e)=>{
   e.preventDefault();
