@@ -1,157 +1,244 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Automation</title>
-  <link rel="icon" type="image/x-icon" href="/assets/logo2.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allotrix</title>
+  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/3R42ZFTL/favicon.png">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), fullscreen=()">
   <link href="styles.css" rel="stylesheet" type="text/css" />
-  
-
 </head>
-
 <body>
 
-  <nav class="navbar">
+  <!-- HEADER -->
+  <nav class="navbar" id="home">
     <div class="logo">
-      <a href="#"><img class="logo-img" src="assets/logo2.png"></a>
+      <a href="#"><img class="logo-img" src="https://i.postimg.cc/TYqgQPzX/logo2.png"></a>
     </div>
-    <ul class="nav-items">
-      <li class="nav-item" id="home">Home</li>
-      <li class="nav-item" id="about">How Does It Work?</li>
-      <li class="nav-item" id="pricing">Pricing</li>
-      <li class="nav-item" id="contact">Contact</li>
-      <li class="nav-item" style="color: red;" id="download">DOWNLOAD</li>
+    <ul class="nav-items" id="navbar">
+      <li class="nav-item"><a href="#home">Home</a></li>
+      <li class="nav-item"><a href="#why-choose-allotrix">Why choose allotrix</a></li>
+      <li class="nav-item"><a href="#features">Features</a></li>
+      <li class="nav-item"><a href="#pricing">Pricing</a></li>
+      <li class="nav-item"><a href="#contact">Contact</a></li>
+      <li class="nav-item" id="download"><a href="#" style="color: rgba(239, 64, 54, 1);">DOWNLOAD</a></li>
       <li class="nav-item" id="close-btn">CLOSE</li>
-
     </ul>
-    <div class="mobile-menu-button">&#9776;</div>
+    <button id="mobile-menu-button" onclick="showNav()">&#9776;</button>
   </nav>
 
-  
-
+  <!-- HERO SECTION -->
   <div class="content-body">
     <div class="hero">
       <h1 class="heading">Make <b>One-Month</b> processes,</h1>
-      <h1 class="heading"><b>One-Second</b> using <b class="hero-tag">allotrix</b></h1>
-      <p class="hero-p">"Every once in a while, a new technology, an old problem, and a big idea turn into an
-        innovation."</p>
+      <h1 class="heading"><b>One-Second</b> using <b class="hero-tag">
+        <span><img class="logo-img" src="https://i.postimg.cc/TYqgQPzX/logo2.png"></span>
+      </b></h1>
+      <p class="hero-p">Automate and upscale the MUN experience in one click</p>
 
       <div class="hero-button-container">
-        <a href="#" id = "pre-order" class="btn" style="border: 2px solid rgba(239, 64, 54, 1); padding-left: 80px; padding-right: 80px; background: transparent;">Pre Order</a>
-        <a href="#" id= 'hero-download' class="btn filled-button" style="padding-left: 80px; padding-right: 80px;">Download</a>
+        <a href="#" id= 'hero-download' class="btn filled-button">Its Free! Try It Today</a>
       </div>
     </div>
-    <h6 class="subheading">Why Choose <b class="hero-tag" style="text-decoration: underline; text-decoration-color: rgba(239, 64, 54, 1); color: white; font-weight: 100;">allotrix</b>?</h6>
-    <p class="hero-p" style="text-align: center; font-family: poppins; font-size: 1.3em;">We Ensure You <b class="hero-tag" style="font-weight: 100; font-size: 20px;">Automate and Relax</b></p>
+    <h6 class="subheading" id="why-choose-allotrix">Why Choose Allotrix?</h6>
+    <p class="why-choose-head">
+      The most comprehensive automation tool made for MUN
+    </p>
 
-    <!-- Info Section Container -->
-    <div class="info-section-container">
-      <!-- Section 1 -->
-      <div class="info-section">
-        <img src="assets/automate.png" alt="Logo" class="info-logo">
-        <h2 class="info-subtitle">Smart Automating</h2>
-        <p class="info">Allotrix effortlessly handles thousands of allocations daily, accomplishing the task within seconds. Allotrix's algorithm excels in achieving optimal results.</p>
-      </div>
-      <!-- Section 2 -->
-      <div class="info-section">
-        <img src="assets/gforms.png" alt="Logo" class="info-logo">
-        <h2 class="info-subtitle">Processing</h2>
-        <p class="info">
-Allotrix operates seamlessly in the background, allowing you to focus on your other tasks while it performs its magic.</p>
-      </div>
-      <!-- Section 3 -->
-      <div class="info-section">
-        <img src="assets/email.webp" alt="Logo" class="info-logo">
-        <h2 class="info-subtitle">Professional Emails</h2>
-        <p class="info">Allotrix automatically sends a well-crafted email to notify the participant about the allotment.</p>
-      </div>
-    </div>
+    <!-- WHY CHOOSE ALLOTRIX -->
+    <div class="why-choose">
 
-    <!-- Promo Video Container -->
-    <div class="promo-section">
-      <h1 class="subheading" style="font-family: poppins; padding: 20px; color: #333;">Crunching the numbers, <b style="font-weight: 500;">so you dont have to</b></h1>
-      <div id="video" style = "background-image: url(assets/allotrix.jpeg); background-size: cover; background-position: center; display: flex; align-items: end;justify-content: center; ">
-      <h1 class ="subheading" style="font-weight: bold;">Coming Soon!</h1></div>
-
-      <!--<iframe id="video" src="https://www.youtube.com/embed/S3L1Kw087JI?si=xgeREY9lb5nM0snR" 
-      title="YouTube video player" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen></iframe> -->
-    </div>
-
-    <!-- Subscription Container -->
-    <div class="subscription-container">
-      <h6 class="subheading" style="font-family: poppins; color: rgba(239, 64, 54, 1);">Save Time By Getting the Best Deal</h6>
-      <p class="hero-p" style="text-align: center; font-family: poppins; font-size: 1.3em;">Choose what's best for you</p>
-      <div class="offers">
-        <!-- Subscription Card 1 -->
-        <div class="subscription-card outlined-card">
-          <h2 class="offer-title">Standard Plan</h2>
-          <p class="offer-options">Automates country allotments</p>
-          <p class="offer-options">Country matrix manipulation</p>
-          <p class="offer-options">24/7 tech support</p>
-          <p class="offer-empty">  </p>
-          <p class="offer-empty">  </p>
-          <p class="offer-empty">  </p>
-
-
-
-          <h3 class="offer-title">INR 5000/month</h3>
-          <a href="#"><button id="standard-sub-btn" class="btn">Subscribe</button></a>
+      <!-- Item 1 -->
+      <article class="why-choose-item">
+        <div class="head">
+          <img src="https://i.postimg.cc/qMd28KZL/im4.png" alt="im">
+          <p>Eliminate Errors</p>
         </div>
-        <!-- Subscription Card 2 -->
-        <div class="subscription-card filled-card">
-          <h2 class="offer-title">Premium Plan</h2>
-          <p class="offer-options">Automates country allotments</p>
-          <p class="offer-options">Country matrix manipulation</p>
-          <p class="offer-options">24/7 technical support</p>
-          <p class="offer-options">Provides detailed statistics</p>
-          <p class="offer-options">Auto sends professional emails</p>
+        <aside>
+          <p>Efficiently and rapidly allocate precise and high-quality assignments in a matter of seconds.</p>
+        </aside>
+      </article>
 
-          <h3 class="offer-title">INR 7000/month</h3>
-          <a href="#"><button id="premium-sub-btn" class="btn" style="background-color: white; color: #333;">Subscribe</button></a>
+      <!-- Item 2 -->
+      <article class="why-choose-item animated-element">
+        <div class="head">
+          <img src="https://i.postimg.cc/J7XbDxK0/im3.png" alt="im">
+          <p>Save Money  & Time</p>
         </div>
-      </div>
+        <aside>
+          <p>Streamline your registration, processing, and allotment, saving time and enhancing delegate satisfaction.</p>
+        </aside>
+      </article>
+
+      <!-- Item 3 -->
+      <article class="why-choose-item">
+        <div class="head">
+          <img src="https://i.postimg.cc/mk7MvZhC/im2.png" alt="im">
+          <p>Best Deligate Experience</p>
+        </div>
+        <aside>
+          <p>Allotrix allows delegates to select their desired countries for a more engaging debate experience.</p>
+        </aside>
+      </article>
+
+      <!-- Item 4 -->
+      <article class="why-choose-item">
+        <div class="head">
+          <img src="https://i.postimg.cc/V6xnZ0sz/im1.png" alt="im">
+          <p>Get insights</p>
+        </div>
+        <aside>
+          <p>Allotrix provides detailed insights into your tournament data, so you can make informed decisions about future events.</p>
+        </aside>
+      </article>
     </div>
 
-    <!-- Contact Container -->
-    <div class="contact-container">
-      <h6 class="subheading">Contact <b class="hero-tag" style="text-decoration: underline; text-decoration-color: rgba(239, 64, 54, 1); color: white; font-weight: 100;">Us</b></h6>
-      <form action="#" method="post">
-        <div class="input-group">
-          <div class="input-item">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <!-- FEATURES SECTION -->
+    <section id="features">
+      <h3>Features of Allotrix</h3>
+      <h4>Allotrix offers a wide range of features to help you automate your debate tournament</h4>
+
+      <!-- Container -->
+      <div class="feature-items">
+
+        <!-- Item 1 -->
+        <article class="feature-item">
+          <div class="feature-head">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.394 13.742L7.137 17.362 14.753 8.658 13.247 7.342 6.863 14.638 3.606 12.152zM21.753 8.658L20.247 7.342 13.878 14.621 13.125 14.019 11.875 15.581 14.122 17.379z"></path></svg>
+            <p style="font-weight: 400;">Smart allotments</p>
           </div>
-          <div class="input-item">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+          <aside>
+            <p>Allotrix uses a sophisticated algorithm to make accurate allotments, even for large MUNs with thousands of delegates.</p>
+          </aside>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="feature-item">
+          <div class="feature-head">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z"></path></svg>
+            <p style="font-weight: 400;">Emailing</p>
           </div>
+          <aside>
+            <p>Allotrix can automatically send emails to delegates with their allotment information and other important tournament details.</p>
+          </aside>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="feature-item">
+          <div class="feature-head">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 1H4a1 1 0 00-1 1v12a1 1 0 001 1h8a1 1 0 001-1V2a1 1 0 00-1-1zM4 0a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V2a2 2 0 00-2-2H4z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M11 3H5v3h6V3zM5 2a1 1 0 00-1 1v3a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1H5zm3 11a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0z" clip-rule="evenodd"></path><circle cx="8" cy="11" r="1"></circle></svg>
+            <p style="font-weight: 400;">Reporting & Analysis</p>
+          </div>
+          <aside>
+            <p>Allotrix provides detailed insights into your tournament data, so you can make informed decisions about future events all for free!</p>
+          </aside>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="subscription-container" id="pricing">
+      <h6 class="pricing-head">PRICING</h6>
+      <p class="why-choose-head">Allotrix offers three pricing plans to meet the needs of all MUN hosts</p>
+    </section>
+
+    <!-- Container -->
+    <div class="subs">
+
+      <!-- Item 1 -->
+      <article class="subs-item">
+        <h3 class="sub-head">Standard</h3>
+        <h2>Free</h2>
+        <div class="sub-data">
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Basic Analytics</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Smart Allotments</p>
+          </article>
         </div>
-        <div class="message-container">
-          <textarea id="message" name="message" placeholder="Message" rows="4" required></textarea>
+      </article>
+
+      <!-- Item 2 -->
+      <article class="subs-item" style="background-color: #AA362F;">
+        <h3 class="sub-head">Premium</h3>
+        <h2>Rs. 2999</h2>
+        <p style="font-size: 13px; font-family: 'Poppins', sans-serif; font-weight: 200; margin-top: -8px;">( for <strong>1</strong> MUN )</p>
+        <div class="sub-data">
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Basic Analytics</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Smart Allotments</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Custom Branding</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Customer Support</p>
+          </article>
         </div>
-        <button id = "form-button" class="btn">Submit</button>
+      </article>
+
+      <!-- Item 3 -->
+      <article class="subs-item" style="background-color: #AA362F;">
+        <h3 class="sub-head">Premium +</h3>
+        <h2>Rs. 3999</h2>
+        <p style="font-size: 13px; font-family: 'Poppins', sans-serif; font-weight: 200; margin-top: -8px;">( for <strong>2</strong> MUN )</p>
+        <div class="sub-data">
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Basic Analytics</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Smart Allotments</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Custom Branding</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Customer Support</p>
+          </article>
+          <article>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p>Free Email Templates</p>
+          </article>
+        </div>
+      </article>
+    </div>
+
+    <!-- LIFTIME ACCESS SECTION -->
+    <section class="life-access">
+      <div class="life-access-container">
+        <h3>For Life-time Unlimited Access to Allotrix, With no recurring Fees. Click here to <span style="font-weight: bold; color: #EF4036;">Try it out for Free!</span></h3>
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z" clip-rule="evenodd"></path></svg>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <h2>Contact <span style="color: #EF4036;">Us</span></h2>
+      <form action="/" method="post">
+        <div class="name-email">
+          <input type="text" name="name" placeholder="Name">
+          <input type="email" name="email" placeholder="Email">
+        </div>
+        <textarea name="message" cols="30" rows="6" placeholder="Message"></textarea>
+        <button>Submit</button>
       </form>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <h3 class="app-name">Allotrix</h3>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/allotrix-app-2bb44428b/" target="_blank"><img src="assets/linkedin-icon.png" alt="LinkedIn"></a>
-          <a href="#" target="_blank"><img src="assets/twitter-icon.webp" alt="Twitter"></a>
-          <a href="https://www.instagram.com/allotrix/" target="_blank"><img src="assets/Instagram-Icon.png" alt="Instagram"></a>
-          <a href="#" target="_blank"><img src="assets/youtube-icon.png" alt="Youtube"></a>
-        </div>
-      </div>
-    </footer>
+    </section>
   </div>
-  <script src="script.js" type="module"></script>
-  
+  <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
