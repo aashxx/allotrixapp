@@ -16,7 +16,6 @@ const resNav = document.getElementById('mobile-menu-button');
 const navbar = document.getElementById('navbar');
 const workingContainer = document.querySelector('#working-container');
 const mobileNav = document.getElementById("mobile-menu-button");
-const heroDownload = document.getElementById("hero-download");
 
 // Nav items
 const home = document.getElementById("homepage");
@@ -45,11 +44,7 @@ testimonial.addEventListener("click", () => {
 });
 
 
-heroDownload.addEventListener("click", () => {
-    console.log("download clicked");
-    workingContainer.innerHTML = "";
-    downloadPage();
-  });
+
 
 
 
