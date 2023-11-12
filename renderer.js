@@ -7,25 +7,29 @@ document.addEventListener("DOMContentLoaded", loadLandingpage)
 
 
 async function loadLandingpage(){
-    //showLoadingScreen();
-   // try{
-        //await delay(2000);
+  
         createHeroSection();
         whyChooseContainer();
         features();
         pricing();
         lifeTimeOffer();
         footer();
-    //}
-    //finally{
-        //hideLoadingScreen()
-    //}
-}
+    }
+
+
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+
+const mobileNav = document.getElementById("mobile-menu-button")
+
+if(mobileNav){
+  mobileNav.addEventListener("click", showNav)
+
+  
+}
 
 // Responsive Nav
 let state = 1;

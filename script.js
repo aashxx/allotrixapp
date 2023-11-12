@@ -1,17 +1,3 @@
-const res_nav = document.getElementById('mobile-menu-button');
-const navbar = document.getElementById('navbar');
-
-// Responsive Nav
-let state = 1;
-function showNav() {
-  if(state == 1) {
-    navbar.style.width='100%';
-    state = 0;
-  } else {
-    navbar.style.width='0%';
-    state = 1;
-  }
-}
 
 // Loading Animations
 window.onload =  function () {
