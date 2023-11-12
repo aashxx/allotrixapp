@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
 * {
@@ -521,6 +522,12 @@
 
   /* WORKING CONTAINER*/
 
+  .base-container{
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+  }
+
   #working-container{
     height: calc(100vh - 12vh);
     display: flex;
@@ -563,7 +570,217 @@
   }
  
  
+  /*TESTIMONIAL*/
+
+  .testimonial-heading{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    background: linear-gradient(to bottom, #EF4036, #A6241D, #A31008);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    padding: 60px;
+  }
+ 
+
+  .wrappe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    gap: 20px; /* Adjust the gap between items */
+    justify-content: center;
+}
+.wrappe .contin{
+    position: relative;
+    width: 350px;
+    color: #fff;
+    background-color: #3e3c3c;
+    margin: 40px 10px;
+    padding: 30px 20px;
+    border-radius: 3px ;
+    transition: 0.3s ease;
+}
+.wrappe .contin .profi{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10%;
+    width: 100%;
+    display: block;
+}
+.wrappe .contin .profi .imgBx{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border-radius: 8px solid #070c0d;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.wrappe .contin .profi .imgBx img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+.wrappe .contin .profi .imgBx:hover img{
+    filter: saturate(140%);
+    transform: scale(0.95);
+}
+.wrappe .contin .profi h2{
+    padding: 5px 0;
+    text-transform: capitalize;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.wrappe .contin p {
+    margin-top: 10px;
+    color: #fff;
+    padding: 0 8px;
+    font-size: 15px;
+    opacity: 0.8;
+}
+.wrappe .contin .left{
+   height: 30px;
+   width: 30px;
+   margin-top: 60px;
+
+}
+.wrappe .contin .left  img{
   
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.wrappe .contin .right{
+    height: 30px;
+    width: 30px;
+}
+.wrappe .contin .right img{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.wrappe .contin .soci img{
+    padding: 8px;
+height:50px;
+    background-color: rbga(255,255,255,0.08);
+    border-radius: 4px;
+    box-shadow: 0 4px 4px rbga(0,0,0,0.5);
+ 
+}
+.wrappe .contin .soci img:hover{
+    background-color: #3b7cf5;
+}
+
+
+
+/*DOWNLOAD PAGE*/
+.download-container{
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding-left: 200px;
+  padding-bottom: 120px;
+  gap: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, rgba(21, 21, 20, 1), rgba(94, 16, 2, .6)), url("assets/downloadBG.jpg");
+
+}
+
+.download-heading-container{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: -1px;
+  line-height: 0.96;
+    font-size: 8em;
+
+}
+
+.download-button-container{
+  display: flex;
+  margin-left: 10px;
+  gap: 30px;
+}
+
+
+
+.download-button{
+  border: 1px solid rgb(243, 237, 237);
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 10px 40px;
+  font-size: 1.5em;
+  color: #D9D9D9;
+  background: #EF4036;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+
+.download-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.download-button:active{
+  transform: scale(0.95);
+}
+
+.tutorial-heading-container{
+  padding: 20px;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  border-bottom: .5px solid rgb(243, 237, 237);
+
+}
+
+.tutorial-container{
+  padding:50px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorial-container iframe{
+  border-radius: 12px;
+
+}
+
+.download-page-contact-message{
+  font-weight: 100;
+}
+
+.download-page-contact-message a{
+  cursor: pointer;
+  color: white;
+}
+
+.download-page-contact-message a:hover{
+  color: red;
+}
 
   /* TABLET VIEW */
 @media (max-width: 912px) {
