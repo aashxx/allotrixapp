@@ -1,5 +1,6 @@
    
-  
+import {downloadPage} from "../index.js";
+
 const workingContainer = document.querySelector('#working-container');
 
 export function createHeroSection() {
@@ -38,6 +39,12 @@ export function createHeroSection() {
     button.id = 'hero-download';
     button.classList.add('btn', 'filled-button');
     button.textContent = 'Its Free! Try It Today';
+
+    button.addEventListener("click", () => {
+      console.log("download clicked");
+      workingContainer.innerHTML = "";
+      downloadPage();
+    });
   
     buttonContainer.appendChild(button);
   
