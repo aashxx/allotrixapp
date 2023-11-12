@@ -563,7 +563,7 @@
   @keyframes glow {
     10%, 100% {
       color: #FFF;
-      text-shadow: 0 0 10px #AA362F, 0 0 50px #AA362F, 0 0 100px #AA362F;
+      text-shadow: 0 0 5px rgba(170, 54, 47, 0.7), 0 0 20px rgba(170, 54, 47, 0.5), 0 0 40px rgba(170, 54, 47, 0.3);
     }
     
     50%, 90% {
@@ -571,6 +571,7 @@
       text-shadow: none;
     }
   }
+  
   
   .text-container > span:nth-child(2) {
       animation-delay: 0.25s;
@@ -763,7 +764,7 @@
       }
 
       .loading-screen {
-        font-size: 3.7em;
+        font-size: 3.4em;
       
       }
     
