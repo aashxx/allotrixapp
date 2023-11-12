@@ -4,6 +4,7 @@ import {features} from "./landingPage/features.js";
 import {pricing} from "./landingPage/pricing.js";
 import {lifeTimeOffer} from "./landingPage/lifeTimeOffer.js";
 import {footer} from "./landingPage/footer.js";
+import {showLoadingScreen, hideLoadingScreen, createLoadingScreen} from "./loadingPage.js";
 
 export{
     createHeroSection,
@@ -12,5 +13,8 @@ export{
     pricing,
     lifeTimeOffer,
     footer,
+    showLoadingScreen,
+    hideLoadingScreen,
+    createLoadingScreen,
     
 }
