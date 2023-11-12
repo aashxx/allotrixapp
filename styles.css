@@ -679,5 +679,14 @@
     .hero-p {
       font-size: 14px;
     }
+
+    .why-choose-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+      }
   
   }
