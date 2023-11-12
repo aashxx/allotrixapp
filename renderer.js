@@ -8,7 +8,6 @@ async function loadLandingpage(){
     showLoadingScreen();
     try{
         await delay(2000);
-        showLoadingScreen()
         createHeroSection();
         whyChooseContainer();
         features();
