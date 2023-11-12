@@ -518,7 +518,7 @@
 
   /* WORKING CONTAINER*/
 
-  .working-container{
+  #working-container{
     height: calc(100vh - 12vh);
     display: flex;
     flex-direction: column;
