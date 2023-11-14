@@ -110,6 +110,7 @@
   .btn:hover {
     background-color: rgba(239, 64, 54, 1);
     transform: scale(1.05);
+    color: white;
   }
   
   .content-body {
@@ -686,82 +687,62 @@ height:50px;
 
 /*DOWNLOAD PAGE*/
 .download-container{
-  min-height: 70vh;
-  width: 100%;
+  border-radius: 21px;
+  min-height: 60vh;
+  max-height: 90vh;
+  gap: 20px;
+  width: 75%;
+  padding: 20px;
+  background: linear-gradient(to bottom, #232323, #151514);
   display: flex;
   flex-direction: column;
-  align-items: start;
+  text-align: center;
+  margin-top: 3vh;
+  animation: itemFade 0.5s ease-in-out forwards;
   justify-content: center;
-  padding-left: 200px;
-  padding-bottom: 120px;
-  gap: 30px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, rgba(21, 21, 20, 1), rgba(94, 16, 2, .6)), url("assets/downloadBG.jpg");
+
 
 }
 
 .download-heading-container{
-  text-align: left;
   display: flex;
   flex-direction: column;
-  font-weight: bold;
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: -1px;
-  line-height: 0.96;
-    font-size: 8em;
+  justify-content: center;
+  align-items: center;
 
+}
+
+.download-heading{
+  font-size: 65px;
+  font-weight: 300;
+  text-align: center;
 }
 
 .download-button-container{
   display: flex;
+  justify-content: center;
   margin-left: 10px;
   gap: 30px;
 }
 
 
-
-.download-button{
-  border: 1px solid rgb(243, 237, 237);
-  cursor: pointer;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-family: 'Bebas Neue', sans-serif;
-  padding: 10px 40px;
-  font-size: 1.5em;
-  color: #D9D9D9;
-  background: #EF4036;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-
-.download-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.download-button:active{
-  transform: scale(0.95);
-}
-
 .tutorial-heading-container{
-  padding: 20px;
-  font-size: 3em;
-  display: flex;
-  justify-content: center;
+  position: relative;
   width: 100%;
-  font-family: 'Bebas Neue', sans-serif;
-  border-bottom: .5px solid rgb(243, 237, 237);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
 
 }
 
 .tutorial-container{
-  padding:50px;
-  display: flex;
-  flex-direction: column;
-  gap:20px;
+
+  gap: 40px;
   justify-content: center;
   align-items: center;
+  margin: 50px;
 }
 
 .tutorial-container iframe{
@@ -781,6 +762,62 @@ height:50px;
 .download-page-contact-message a:hover{
   color: red;
 }
+
+
+
+/* POP UP */
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background-color: #242529;
+  box-shadow: 0 2px 4px 5px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  background-color: #242529;
+  padding: 10px 20px;
+  border-bottom: 1px solid grey;
+  top: 0;
+  position: sticky;
+  z-index: 9999;
+
+}
+
+.popup-header h1 {
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #EF4036;
+  font-weight: 300;
+  font-size: 22px;
+  padding: 12px;
+  cursor: pointer;
+}
+.close-button:hover{
+  border-radius: 100px;
+  padding: 12px;
+  background-color: grey;
+}
+
 
   /* TABLET VIEW */
 @media (max-width: 912px) {
