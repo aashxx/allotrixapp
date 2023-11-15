@@ -127,8 +127,9 @@ export async function createPopup(){
             const userDocRef = doc(usersCollection, userId);
           
             await updateDoc(userDocRef, { loggedIn: false });
-          
-            signOut(auth)
+            showLoadingScreen();
+            try {
+                signOut(auth)
               .then(async () => {
                 clearCookie("rememberMe");
 
@@ -143,6 +144,12 @@ export async function createPopup(){
               .catch((error) => {
                 console.log("logout error: ", error);
               });
+            }catch(error){
+                console.error(error)
+            }finally{
+                hideLoadingScreen();
+            }
+            
         })
 
 
@@ -259,6 +266,7 @@ export async function createPopup(){
             
             const form = document.createElement('form');
             form.className = "account-form"
+            form.method = "post";
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
             form.appendChild(rememberMeContainer);
@@ -303,7 +311,6 @@ export async function createPopup(){
                         if (rememberMeChecked) {                        
                             const cookieValue = JSON.stringify(local_remember);
 
-                            // Set the cookie
                             document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
                             console.log("cookie set")
                         }
@@ -435,7 +442,8 @@ export async function createPopup(){
             submitButton.classList.add('btn');
             
             const form = document.createElement('form');
-            form.className = "account-form"
+            form.className = "account-form";
+            form.method = "post"
             form.appendChild(usernameInput);
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
