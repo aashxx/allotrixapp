@@ -7,11 +7,14 @@ import {footer} from "./landingPage/footer.js";
 import {showLoadingScreen, hideLoadingScreen, createLoadingScreen} from "./loadingPage.js";
 import {testimonials} from "./testimonials.js";
 import {downloadPage} from "./download.js";
+import {createPopup, createLoginPage, createSigninPage} from "./account.js";
 
 export{
     createHeroSection,
     whyChooseContainer,
     features,
+    createPopup,
+    createLoginPage,
     pricing,
     lifeTimeOffer,
     footer,

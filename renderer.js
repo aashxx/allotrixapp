@@ -10,6 +10,8 @@ import {
   hideLoadingScreen,
   createLoadingScreen,
   downloadPage,
+  createLoginPage,
+  createPopup,
 } from "./index.js";
 
 const resNav = document.getElementById('mobile-menu-button');
@@ -59,6 +61,16 @@ if (mobileNav) {
   mobileNav.addEventListener("click", showNav);
 }
 
+
+const accountButton = document.getElementById("account")
+
+    accountButton.addEventListener("click", ()=>{
+      createPopup();
+
+    })
+
+
+
 // Responsive Nav
 let state = 1;
 function showNav() {
@@ -83,3 +95,5 @@ async function loadLandingPage() {
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
