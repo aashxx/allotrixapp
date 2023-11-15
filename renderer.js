@@ -7,6 +7,7 @@ import {
   lifeTimeOffer,
   footer,
   downloadPage,
+  
   createPopup,
 } from "./index.js";
 
