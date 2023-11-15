@@ -1,10 +1,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
 import { getFirestore, collection, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
 import { getStorage, ref as sRef, getDownloadURL} from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-storage.js';
 
 
-import {hideLoadingScreen, showLoadingScreen} from "./index.js";
+import {hideLoadingScreen, showLoadingScreen, getCookie} from "./index.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDymSv7NIZufePM27ZXVf97KDdwb9QxY8s",
@@ -27,6 +27,128 @@ const storage = getStorage(App)
 
 
 export async function createPopup(){
+
+
+    const rememberMeCookie = getCookie("rememberMe");
+    const localRememberData = JSON.parse(rememberMeCookie);
+
+
+    if(rememberMeCookie){
+        const popupContainer = document.createElement('div');
+        popupContainer.id = 'popup-container';
+        popupContainer.classList.add('hidden');
+      
+        const popup = document.createElement('div');
+        popup.classList.add('popup');
+        popup.style.height = "50%";
+        popup.style.width = "50%";
+
+
+      
+        const popupHeader = document.createElement('div');
+        popupHeader.classList.add('popup-header');
+      
+        const heading = document.createElement('h2');
+        heading.textContent = 'Allotrix Account';
+      
+        const closeButton = document.createElement('button');
+        closeButton.id = 'close-popup';
+        closeButton.classList.add('btn');
+        closeButton.textContent = 'X';
+      
+        const popupContent = document.createElement('div');
+        popupContent.innerHTML= ""
+        popupContent.id = "pop-up-content";
+        popupContent.classList.add('content');
+      
+        // Append the elements to build the structure
+        popupHeader.appendChild(heading);
+        popupHeader.appendChild(closeButton);
+        popup.appendChild(popupHeader);
+        popup.appendChild(popupContent);
+        popupContainer.appendChild(popup)
+      
+        // Add the popup to the document body
+        document.body.appendChild(popupContainer);
+      
+        // Show the popup by removing the 'hidden' class
+        popupContainer.classList.remove('hidden');
+
+
+        closeButton.addEventListener('click', () => {
+
+            const popupContent = document.getElementById("pop-up-content");
+            popupContent.innerHTML=""
+            popupContainer.classList.add('hidden');
+
+
+          });
+
+        const imageDiv  = document.createElement("img");
+        imageDiv.src = "./assets/greenTick.png";
+        imageDiv.style.height = "150px";
+        imageDiv.style.width = "150px";
+
+        const emailText  = document.createElement("h2");
+        emailText.textContent = localRememberData.email;
+
+        const loggedinStatus  = document.createElement("div");
+        loggedinStatus.style.display = "flex";
+        loggedinStatus.style.gap = "3px"
+        
+        const loggedinStatusText  = document.createElement("p");
+        loggedinStatusText.textContent = 'Logged in'
+
+
+        const loggedinStatusColor  = document.createElement("div");
+        loggedinStatusColor.style.backgroundColor = "green";
+        loggedinStatusColor.style.height = "auto";
+        loggedinStatusColor.style.width = "25px";
+
+
+
+
+        loggedinStatus.appendChild(loggedinStatusText);
+        loggedinStatus.appendChild(loggedinStatusColor);
+
+
+        const logOutBtn  = document.createElement("button");
+        logOutBtn.className= "btn";
+        logOutBtn.textContent = "Log Out"
+
+
+        popupContent.appendChild(imageDiv)
+        popupContent.appendChild(emailText)
+        popupContent.appendChild(loggedinStatus)
+        popupContent.appendChild(logOutBtn)
+
+        logOutBtn.addEventListener("click", async ()=>{
+            const userId = auth.currentUser.uid;
+            const userDocRef = doc(usersCollection, userId);
+          
+            await updateDoc(userDocRef, { loggedIn: false });
+          
+            signOut(auth)
+              .then(async () => {
+                clearCookie("rememberMe");
+
+                const popupContent = document.getElementById("pop-up-content");
+                popupContent.innerHTML=""
+                popupContainer.classList.add('hidden');
+                 
+
+               
+                console.log("Sign-out successful");
+              })
+              .catch((error) => {
+                console.log("logout error: ", error);
+              });
+        })
+
+
+    }else{
+        
+   
 
     //create pop up
     const popupContainer = document.createElement('div');
@@ -449,4 +571,10 @@ function displayError(txt, container) {
   
     container.appendChild(msgContainer);
     console.log(txt)
-  }
+  };
+}
+
+
+export function clearCookie(cookieName) {
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}

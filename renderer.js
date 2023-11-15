@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("User signed up successfully!");
 
         const USER = await auth.currentUser;
+        console.log(USER)
         if (USER) {
             const UID = USER.uid;
             const userDocRef = doc(db, "users", UID);
@@ -185,7 +186,7 @@ function delay(ms) {
 }
 
 
-function getCookie(name) {
+export function getCookie(name) {
   const cookies = document.cookie.split(';');
   for (const cookie of cookies) {
     const [cookieName, cookieValue] = cookie.split('=');

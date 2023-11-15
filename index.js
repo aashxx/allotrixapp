@@ -7,8 +7,9 @@ import {footer} from "./landingPage/footer.js";
 import {showLoadingScreen, hideLoadingScreen, createLoadingScreen} from "./loadingPage.js";
 import {testimonials} from "./testimonials.js";
 import {downloadPage} from "./download.js";
-import {createPopup, } from "./account.js";
+import {createPopup, clearCookie} from "./account.js";
 import{firebaseConfig} from "./firebaseConfig.js"
+import{getCookie} from "./renderer.js"
 
 
 export{
@@ -25,5 +26,7 @@ export{
     testimonials,
     downloadPage,
     firebaseConfig,
+    getCookie,
+    clearCookie,
     
 }
