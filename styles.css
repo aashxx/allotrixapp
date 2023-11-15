@@ -881,7 +881,13 @@ height:50px;
   padding: 20px;
 }
 
+.container-fluid{
+  display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
 
+}
 
   /* TABLET VIEW */
 @media (max-width: 912px) {

@@ -28,130 +28,115 @@ const storage = getStorage(App)
 
 export async function createPopup(){
 
-
     const rememberMeCookie = getCookie("rememberMe");
     const localRememberData = JSON.parse(rememberMeCookie);
-
-
-    if(rememberMeCookie){
+    
+    if (rememberMeCookie) {
         const popupContainer = document.createElement('div');
         popupContainer.id = 'popup-container';
         popupContainer.classList.add('hidden');
-      
+    
         const popup = document.createElement('div');
         popup.classList.add('popup');
         popup.style.height = "50%";
         popup.style.width = "50%";
-
-
-      
+    
         const popupHeader = document.createElement('div');
         popupHeader.classList.add('popup-header');
-      
+    
         const heading = document.createElement('h2');
         heading.textContent = 'Allotrix Account';
-      
+    
         const closeButton = document.createElement('button');
         closeButton.id = 'close-popup';
         closeButton.classList.add('btn');
         closeButton.textContent = 'X';
-      
+    
         const popupContent = document.createElement('div');
-        popupContent.innerHTML= ""
+        popupContent.innerHTML = "";
         popupContent.id = "pop-up-content";
         popupContent.classList.add('content');
-      
+    
         // Append the elements to build the structure
         popupHeader.appendChild(heading);
         popupHeader.appendChild(closeButton);
         popup.appendChild(popupHeader);
         popup.appendChild(popupContent);
-        popupContainer.appendChild(popup)
-      
+        popupContainer.appendChild(popup);
+    
         // Add the popup to the document body
         document.body.appendChild(popupContainer);
-      
+    
         // Show the popup by removing the 'hidden' class
         popupContainer.classList.remove('hidden');
-
-
+    
         closeButton.addEventListener('click', () => {
-
             const popupContent = document.getElementById("pop-up-content");
-            popupContent.innerHTML=""
+            popupContent.innerHTML = "";
             popupContainer.classList.add('hidden');
-
-
-          });
-
-        const imageDiv  = document.createElement("img");
+        });
+    
+        const imageDiv = document.createElement("img");
         imageDiv.src = "./assets/greenTick.png";
         imageDiv.style.height = "150px";
         imageDiv.style.width = "150px";
-
-        const emailText  = document.createElement("h2");
+    
+        const emailText = document.createElement("h2");
         emailText.textContent = localRememberData.email;
-
-        const loggedinStatus  = document.createElement("div");
+    
+        const loggedinStatus = document.createElement("div");
         loggedinStatus.style.display = "flex";
         loggedinStatus.style.gap = "3px"
-        
-        const loggedinStatusText  = document.createElement("p");
+    
+        const loggedinStatusText = document.createElement("p");
         loggedinStatusText.textContent = 'Logged in'
-
-
-        const loggedinStatusColor  = document.createElement("div");
+    
+        const loggedinStatusColor = document.createElement("div");
         loggedinStatusColor.style.backgroundColor = "green";
         loggedinStatusColor.style.height = "auto";
         loggedinStatusColor.style.width = "25px";
-
-
-
-
+    
         loggedinStatus.appendChild(loggedinStatusText);
         loggedinStatus.appendChild(loggedinStatusColor);
-
-
-        const logOutBtn  = document.createElement("button");
-        logOutBtn.className= "btn";
+    
+        const logOutBtn = document.createElement("button");
+        logOutBtn.className = "btn";
         logOutBtn.textContent = "Log Out"
-
-
+    
         popupContent.appendChild(imageDiv)
         popupContent.appendChild(emailText)
         popupContent.appendChild(loggedinStatus)
         popupContent.appendChild(logOutBtn)
-
-        logOutBtn.addEventListener("click", async ()=>{
+    
+        logOutBtn.addEventListener("click", async (e) => {
+            e.preventDefault()
             const userId = auth.currentUser.uid;
             const userDocRef = doc(usersCollection, userId);
-          
+    
             await updateDoc(userDocRef, { loggedIn: false });
             showLoadingScreen();
             try {
                 signOut(auth)
-              .then(async () => {
-                clearCookie("rememberMe");
-
-                const popupContent = document.getElementById("pop-up-content");
-                popupContent.innerHTML=""
-                popupContainer.classList.add('hidden');
-                 
-
-               
-                console.log("Sign-out successful");
-              })
-              .catch((error) => {
-                console.log("logout error: ", error);
-              });
-            }catch(error){
+                    .then(async () => {
+                        clearCookie("rememberMe");
+    
+                        const popupContent = document.getElementById("pop-up-content");
+                        popupContent.innerHTML = "";
+                        popupContainer.classList.add('hidden');
+    
+                        console.log("Sign-out successful");
+                    })
+                    .catch((error) => {
+                        console.log("logout error: ", error);
+                    });
+            } catch (error) {
                 console.error(error)
-            }finally{
+            } finally {
                 hideLoadingScreen();
             }
-            
         })
-
+    
+    
 
     }else{
      
@@ -208,29 +193,25 @@ export async function createPopup(){
           function loginpage(){
 
             const mainContent = document.createElement('div');
-            mainContent.id = "main-content"
+            mainContent.id = "main-content";
             mainContent.classList.add('row', 'main-content', 'bg-success', 'text-center');
-            
-        
-            
+
             const loginForm = document.createElement('div');
             loginForm.classList.add('col-md-8', 'col-xs-12', 'col-sm-12', 'login_form');
-            
+
             const formContainer = document.createElement('div');
             formContainer.classList.add('container-fluid');
-            
+
             const formHeading = document.createElement('h2');
             formHeading.innerHTML = 'Log In to <b style = "color: #EF4036;">Allotrix<b>';
-            
-            formContainer.appendChild(formHeading);
-            
+
             const emailInput = document.createElement('input');
             emailInput.type = 'text';
             emailInput.name = 'email';
             emailInput.id = 'email_id';
             emailInput.placeholder = 'Email ID';
             emailInput.classList.add('form__input');
-            
+
             const passwordInput = document.createElement('input');
             passwordInput.type = 'password';
             passwordInput.name = 'password';
@@ -238,48 +219,44 @@ export async function createPopup(){
             passwordInput.placeholder = 'Password';
             passwordInput.classList.add('form__input');
 
-
             const rememberMeContainer = document.createElement('div');
             rememberMeContainer.style.display = "flex";
             rememberMeContainer.style.alignItems = "center";
             rememberMeContainer.style.justifyContent = "center";
             rememberMeContainer.style.width = "50%";
 
-
-
             const rememberMeCheckbox = document.createElement('input');
             rememberMeCheckbox.type = 'checkbox';
             rememberMeCheckbox.name = 'remember me';
             rememberMeCheckbox.id = 'remember_me';
-            
+
             const rememberMeLabel = document.createElement('label');
             rememberMeLabel.setAttribute('for', 'remember_me');
             rememberMeLabel.textContent = 'Remember Me';
 
-            rememberMeContainer.appendChild( rememberMeLabel);
-            rememberMeContainer.appendChild(rememberMeCheckbox)
+            rememberMeContainer.appendChild(rememberMeLabel);
+            rememberMeContainer.appendChild(rememberMeCheckbox);
 
             const submitButton = document.createElement('input');
             submitButton.type = 'submit';
             submitButton.value = 'Submit';
             submitButton.classList.add('btn');
-            
-            const form = document.createElement('form');
-            form.className = "account-form";
-            //form.method = "post";  
-            form.appendChild(emailInput);
-            form.appendChild(passwordInput);
-            form.appendChild(rememberMeContainer);
-            form.appendChild(submitButton);
+
+            formContainer.appendChild(formHeading);
+            formContainer.appendChild(emailInput);
+            formContainer.appendChild(passwordInput);
+            formContainer.appendChild(rememberMeContainer);
+            formContainer.appendChild(submitButton);
+
+
+
 
             
-            form.addEventListener('submit', async (event) => {
+            submitButton.addEventListener('click', async (event) => {
             
-                const formData = new FormData(form);
 
-                const email = formData.get('email');
-                const password = formData.get('password');
-
+                const email = emailInput.value;
+                const password = passwordInput.value;
         
             
                 if (email && password) {
@@ -360,7 +337,6 @@ export async function createPopup(){
                 }
             });
             
-            formContainer.appendChild(form);
             
             const noAccountText = document.createElement('p');
             noAccountText.innerHTML = `Don't have an account? <a href="#" class="no-account">Register Here</a>`;
@@ -370,6 +346,8 @@ export async function createPopup(){
             })
             
             
+
+
             formContainer.appendChild(noAccountText);
             loginForm.appendChild(formContainer);
             mainContent.appendChild(loginForm);
@@ -446,24 +424,22 @@ export async function createPopup(){
             submitButton.value = 'Submit';
             submitButton.classList.add('btn');
             
-            const form = document.createElement('form');
-            form.className = "account-form";
-            //form.method = "post";  
-            form.appendChild(usernameInput);
-            form.appendChild(emailInput);
-            form.appendChild(passwordInput);
-            form.appendChild(rememberMeContainer);
-            form.appendChild(submitButton);
-            form.addEventListener('submit', async (event) => {
+          
+            formContainer.appendChild(usernameInput);
+            formContainer.appendChild(emailInput);
+            formContainer.appendChild(passwordInput);
+            formContainer.appendChild(rememberMeContainer);
+            formContainer.appendChild(submitButton);
+
+            submitButton.addEventListener('click', async (event) => {
             
                 event.preventDefault();
 
-                   const formData = new FormData(form);
-
-                    const name = formData.get('username');
-                    const email = formData.get('email');
-                    const password = formData.get('password');
-
+                   const name = usernameInput.value;
+                   const email = emailInput.value;
+                   const password = passwordInput.value;
+           
+               
         
                 if (email && name && password) {
         
@@ -507,7 +483,7 @@ export async function createPopup(){
                                 const cookieValue = JSON.stringify(local_remember);
     
                                 // Set the cookie
-                                document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
+                                document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365;  path=/`;
                                 console.log("cookie set")
                             }
 
@@ -560,7 +536,6 @@ export async function createPopup(){
                 }
             });
             
-            formContainer.appendChild(form);
             
             const noAccountText = document.createElement('p');
             noAccountText.innerHTML = `Already have an account? <a href="#" class="no-account">Login Here</a>`;
