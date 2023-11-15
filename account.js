@@ -307,15 +307,18 @@ export async function createPopup(){
                             "password": password
                         }
         
-        
-                    
-                        let rememberMeChecked = document.getElementById('remember_me').checked;
-                        if (rememberMeChecked) {                        
-                            const cookieValue = JSON.stringify(local_remember);
+                        if(userId){
+                            let rememberMeChecked = document.getElementById('remember_me').checked;
+                            if (rememberMeChecked) {                        
+                                const cookieValue = JSON.stringify(local_remember);
+    
+                                document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
+                                console.log("cookie set")
+                            }
 
-                            document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
-                            console.log("cookie set")
                         }
+                    
+                       
         
                         const USER = await auth.currentUser;
                         if (USER) {
@@ -497,16 +500,20 @@ export async function createPopup(){
                             "password": password
                         }
         
-        
-                    
-                        let rememberMeChecked = document.getElementById('remember_me').checked;
-                        if (rememberMeChecked) {                        
-                            const cookieValue = JSON.stringify(local_remember);
+                        
+                        if(userId){
+                            let rememberMeChecked = document.getElementById('remember_me').checked;
+                            if (rememberMeChecked) {                        
+                                const cookieValue = JSON.stringify(local_remember);
+    
+                                // Set the cookie
+                                document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
+                                console.log("cookie set")
+                            }
 
-                            // Set the cookie
-                            document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
-                            console.log("cookie set")
                         }
+                    
+                       
                         
                         const USER = await auth.currentUser;
                         if (USER) {
