@@ -266,7 +266,7 @@ export async function createPopup(){
             
             const form = document.createElement('form');
             form.className = "account-form";
-            form.method = "post";  
+            //form.method = "post";  
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
             form.appendChild(rememberMeContainer);
@@ -448,7 +448,7 @@ export async function createPopup(){
             
             const form = document.createElement('form');
             form.className = "account-form";
-            form.method = "post";  
+            //form.method = "post";  
             form.appendChild(usernameInput);
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
