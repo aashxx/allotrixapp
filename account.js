@@ -316,14 +316,17 @@ export async function createPopup(){
                                 }
                             } catch (error) {
                                 console.error("Error fetching profile picture:", error);
-                            }
-                        }
-        
+                            }finally{
+
                        //finally
                        const popupContent = document.getElementById("pop-up-content");
                        popupContent.innerHTML=""
                        popupContainer.classList.add('hidden');
                         
+
+                            }
+                        }
+        
         
                     }  catch (error) {
                         displayError("Email doesn't exist or is incorrect, please create an account.", popupContent)
@@ -511,12 +514,16 @@ export async function createPopup(){
                             } catch (error) {
                                 console.error("Error fetching profile picture:", error);
                             }
-                        }
-        
-                        //finally
+                            finally{
+                                //finally
                         const popupContent = document.getElementById("pop-up-content");
                         popupContent.innerHTML=""
                         popupContainer.classList.add('hidden');
+
+                            }
+                        }
+        
+                        
                     
         
                         
