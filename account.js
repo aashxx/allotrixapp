@@ -265,7 +265,8 @@ export async function createPopup(){
             submitButton.classList.add('btn');
             
             const form = document.createElement('form');
-            form.className = "account-form"
+            form.className = "account-form";
+            form.method = "post";  
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
             form.appendChild(rememberMeContainer);
@@ -274,9 +275,11 @@ export async function createPopup(){
             
             form.addEventListener('submit', async (event) => {
             
-                const email = emailInput.value;
-                const password = passwordInput.value;
-        
+                const formData = new FormData(form);
+
+                const email = formData.get('email');
+                const password = formData.get('password');
+
         
             
                 if (email && password) {
@@ -442,6 +445,7 @@ export async function createPopup(){
             
             const form = document.createElement('form');
             form.className = "account-form";
+            form.method = "post";  
             form.appendChild(usernameInput);
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
@@ -451,9 +455,12 @@ export async function createPopup(){
             
                 event.preventDefault();
 
-                const name = usernameInput.value;
-                const email = emailInput.value;
-                const password = passwordInput.value;
+                   const formData = new FormData(form);
+
+                    const name = formData.get('username');
+                    const email = formData.get('email');
+                    const password = formData.get('password');
+
         
                 if (email && name && password) {
         
