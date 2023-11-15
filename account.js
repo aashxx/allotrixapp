@@ -147,9 +147,7 @@ export async function createPopup(){
 
 
     }else{
-        
-   
-
+     
     //create pop up
     const popupContainer = document.createElement('div');
         popupContainer.id = 'popup-container';
