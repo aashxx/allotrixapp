@@ -878,6 +878,9 @@ height:50px;
   width: 75%;
   padding: 20px;
 }
+
+
+
   /* TABLET VIEW */
 @media (max-width: 912px) {
     .hero {

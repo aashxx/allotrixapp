@@ -1,3 +1,28 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js";
+import { getFirestore, collection, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
+import { getStorage, ref as sRef, getDownloadURL} from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-storage.js';
+
+
+import {hideLoadingScreen, showLoadingScreen} from "./index.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDymSv7NIZufePM27ZXVf97KDdwb9QxY8s",
+    authDomain: "mun-automator.firebaseapp.com",
+    projectId: "mun-automator",
+    storageBucket: "mun-automator.appspot.com",
+    messagingSenderId: "536970944281",
+    appId: "1:536970944281:web:c82c6174ef9a816124af88",
+    measurementId: "G-B7EDJMNPHV"
+  };
+
+
+const App =  initializeApp(firebaseConfig);
+const auth = getAuth(App);
+const db = getFirestore(App);
+const usersCollection = collection(db, "users");
+const storage = getStorage(App)
+
 
 
 
@@ -118,9 +143,89 @@ export async function createPopup(){
             form.appendChild(passwordInput);
             form.appendChild(rememberMeContainer);
             form.appendChild(submitButton);
-            form.addEventListener('submit', (event) => {
+
             
-            // Handle form submission here
+            form.addEventListener('submit', async (event) => {
+            
+                const email = emailInput.value;
+                const password = passwordInput.value;
+        
+        
+            
+                if (email && password) {
+        
+                    const previousErrorMessages = document.querySelectorAll('.error-msg-container');
+                    previousErrorMessages.forEach((errorMsg) => {
+                      errorMsg.remove();
+                    });
+        
+                
+                    showLoadingScreen()
+                    try {
+                        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                    
+                        const userId = userCredential.user.uid;
+                    
+        
+                        await updateDoc(doc(usersCollection, userId), { loggedIn: true });
+        
+                        console.log("User signed up successfully!");
+        
+                        // Updating Firestore and CRED.JSON loggedIn field
+                        const local_remember = {
+                            "email": email,
+                            "password": password
+                        }
+        
+        
+                    
+                        let rememberMeChecked = document.getElementById('remember_me').checked;
+                        if (rememberMeChecked) {                        
+                            const cookieValue = JSON.stringify(local_remember);
+
+                            // Set the cookie
+                            document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
+                            console.log("cookie set")
+                        }
+        
+                        const USER = await auth.currentUser;
+                        if (USER) {
+                            const UID = USER.uid;
+                            const userDocRef = doc(db, "users", UID);
+                            const storageRef = sRef(storage, `${UID}/pfp.png`) 
+                            const userDoc = await getDoc(userDocRef);
+                            const userData = userDoc.data();
+
+                            try {
+                                const downloadURL = await getDownloadURL(storageRef);
+            
+                                if (storageRef && downloadURL) {
+                                    const pfp = document.getElementById("account");
+                                    pfp.style.backgroundImage = `url(${downloadURL})`;
+                                
+
+                                }
+                            } catch (error) {
+                                console.error("Error fetching profile picture:", error);
+                            }
+                        }
+        
+                       //finally
+                       const popupContent = document.getElementById("pop-up-content");
+                       popupContent.innerHTML=""
+                       popupContainer.classList.add('hidden');
+                        
+        
+                    }  catch (error) {
+                        displayError("Email doesn't exist, please create an account.", popupContent)
+                        console.error("Error signing up:", error);
+                    }finally{
+                        hideLoadingScreen()
+                    }
+        
+                } else {
+                    displayError("Please enter email and password", popupContent)
+                }
             });
             
             formContainer.appendChild(form);
@@ -140,6 +245,9 @@ export async function createPopup(){
 
           }
 
+
+          //signup page 
+          
           function signupPage(){
 
             const mainContent = document.createElement('div');
@@ -213,9 +321,103 @@ export async function createPopup(){
             form.appendChild(passwordInput);
             form.appendChild(rememberMeContainer);
             form.appendChild(submitButton);
-            form.addEventListener('submit', (event) => {
+            form.addEventListener('submit', async (event) => {
             
-            // Handle form submission here
+                event.preventDefault();
+
+                const name = usernameInput.value;
+                const email = emailInput.value;
+                const password = passwordInput.value;
+        
+                if (email && name && password) {
+        
+                    const previousErrorMessages = document.querySelectorAll('.error-msg-container');
+                    previousErrorMessages.forEach((errorMsg) => {
+                      errorMsg.remove();
+                    });
+        
+                    const userData = {
+                        name,
+                        email,
+                        password,
+                        loggedIn: false,
+                        subscriptionPurchased: false,
+                        html: "",
+                        version: 1
+                    };
+        
+                    showLoadingScreen();
+                    try {
+                        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    
+                        const userId = userCredential.user.uid;
+                    
+                        await setDoc(doc(usersCollection, userId), userData);
+                    
+                        console.log("User signed up successfully!");
+        
+                        // Updating Firestore and CRED.JSON loggedIn field
+                        await updateDoc(doc(usersCollection, userId), { loggedIn: true });
+        
+                        const local_remember = {
+                            "email": email,
+                            "password": password
+                        }
+        
+        
+                    
+                        let rememberMeChecked = document.getElementById('remember_me').checked;
+                        if (rememberMeChecked) {                        
+                            const cookieValue = JSON.stringify(local_remember);
+
+                            // Set the cookie
+                            document.cookie = `rememberMe=${encodeURIComponent(cookieValue)}; expires=365; path=/`;
+                            console.log("cookie set")
+                        }
+                        
+                        const USER = await auth.currentUser;
+                        if (USER) {
+                            const UID = USER.uid;
+                            const userDocRef = doc(db, "users", UID);
+                            const storageRef = sRef(storage, `${UID}/pfp.png`) 
+                            const userDoc = await getDoc(userDocRef);
+                            const userData = userDoc.data();
+
+                            try {
+                                const downloadURL = await getDownloadURL(storageRef);
+            
+                                if (storageRef && downloadURL) {
+                                    const pfp = document.getElementById("account");
+                                    pfp.style.backgroundImage = `url(${downloadURL})`;
+                                
+
+                                }
+                            } catch (error) {
+                                console.error("Error fetching profile picture:", error);
+                            }
+                        }
+        
+                        //finally
+                        const popupContent = document.getElementById("pop-up-content");
+                        popupContent.innerHTML=""
+                        popupContainer.classList.add('hidden');
+                    
+        
+                        
+                        
+        
+                    }  catch (error) {        
+                        displayError("Email already in Use. Please log in.", popupContent)
+                        console.error("Error signing up:", error);
+                    }finally {
+                        hideLoadingScreen();            
+                    }
+            
+                } else {
+                    //const signUpContainer = document.getElementById("login-container")
+                    displayError("Can't leave any feild empty!", signUpContainer)
+            
+                }
             });
             
             formContainer.appendChild(form);
@@ -238,13 +440,13 @@ export async function createPopup(){
 }
 
 
-export async function createLoginPage(){
-    //login page.
-
-    const popupContent = document.getElementById("pop-up-content");
-    
-    
-}
-
-
-export async function createSigninPage(){}
+function displayError(txt, container) {   
+    const msgContainer = document.createElement('div');
+    msgContainer.className = 'error-msg-container';
+    const errorMessage = document.createTextNode(txt);
+    msgContainer.appendChild(errorMessage);
+    msgContainer.style.color = "red";
+  
+    container.appendChild(msgContainer);
+    console.log(txt)
+  }

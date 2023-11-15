@@ -7,21 +7,23 @@ import {footer} from "./landingPage/footer.js";
 import {showLoadingScreen, hideLoadingScreen, createLoadingScreen} from "./loadingPage.js";
 import {testimonials} from "./testimonials.js";
 import {downloadPage} from "./download.js";
-import {createPopup, createLoginPage, createSigninPage} from "./account.js";
+import {createPopup, } from "./account.js";
+import{firebaseConfig} from "./firebaseConfig.js"
+
 
 export{
     createHeroSection,
     whyChooseContainer,
     features,
     createPopup,
-    createLoginPage,
-    pricing,
-    lifeTimeOffer,
-    footer,
     showLoadingScreen,
     hideLoadingScreen,
     createLoadingScreen,
+    pricing,
+    lifeTimeOffer,
+    footer,
     testimonials,
-    downloadPage
+    downloadPage,
+    firebaseConfig,
     
 }
