@@ -266,7 +266,6 @@ export async function createPopup(){
             
             const form = document.createElement('form');
             form.className = "account-form"
-            form.method = "post";
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
             form.appendChild(rememberMeContainer);
@@ -290,7 +289,7 @@ export async function createPopup(){
                 
                     showLoadingScreen()
                     try {
-                        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                        const userCredential = await signInWithEmailAndPassword(auth, email, password)
                     
                         const userId = userCredential.user.uid;
                     
@@ -344,7 +343,7 @@ export async function createPopup(){
                         
         
                     }  catch (error) {
-                        displayError("Email doesn't exist, please create an account.", popupContent)
+                        displayError("Email doesn't exist or is incorrect, please create an account.", popupContent)
                         console.error("Error signing up:", error);
                     }finally{
                         hideLoadingScreen()
@@ -443,7 +442,6 @@ export async function createPopup(){
             
             const form = document.createElement('form');
             form.className = "account-form";
-            form.method = "post"
             form.appendChild(usernameInput);
             form.appendChild(emailInput);
             form.appendChild(passwordInput);
