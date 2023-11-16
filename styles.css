@@ -1008,6 +1008,34 @@ height:50px;
 
 }
 
+
+/* PARTNERS */
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 30px;
+  grid-gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.sponsor-logo {
+  width: 50%;
+  height: 150px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-logo img {
+  width: 100%;
+  height: auto;
+}
+
   /* TABLET VIEW */
 @media (max-width: 912px) {
     .hero {

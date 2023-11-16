@@ -7,7 +7,7 @@ import {
   lifeTimeOffer,
   footer,
   downloadPage,
-  
+  partners,
   createPopup,
 } from "./index.js";
 
@@ -112,10 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-   
-
-    
-  
+ 
     }
   else{
     console.log("remember me cookie not found ")
@@ -130,8 +127,8 @@ home.addEventListener("click", () => {
 
 testimonial.addEventListener("click", () => {
   console.log("Testimonial clicked");
-  workingContainer.innerHTML = "";
-  testimonials();
+  //workingContainer.innerHTML = "";
+  //testimonials();
 });
 
 
@@ -176,6 +173,7 @@ async function loadLandingPage() {
   createHeroSection();
   whyChooseContainer();
   features();
+  //partners();
   pricing();
   lifeTimeOffer();
   footer();
@@ -196,3 +194,5 @@ export function getCookie(name) {
   }
   return null;
 }
+
+

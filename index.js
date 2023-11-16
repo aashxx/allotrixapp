@@ -10,6 +10,7 @@ import {downloadPage} from "./download.js";
 import {createPopup, clearCookie} from "./account.js";
 import{firebaseConfig} from "./firebaseConfig.js"
 import{getCookie} from "./renderer.js"
+import{partners} from "./landingPage/partners.js"
 
 
 export{
@@ -28,5 +29,6 @@ export{
     firebaseConfig,
     getCookie,
     clearCookie,
+    partners,
     
 }
