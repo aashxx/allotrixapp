@@ -142,10 +142,29 @@ download.addEventListener("click", () => {
   downloadPage();
 });
 
+let state = 1;
 
-if (mobileNav) {
-  mobileNav.addEventListener("click", showNav);
-}
+mobileNav.addEventListener("click", (event) => {
+  event.stopPropagation();
+
+  if (state === 1) {
+    navbar.style.width = '100%';
+    state = 0;
+  } else {
+    navbar.style.width = '0%';
+    state = 1;
+  }
+});
+
+document.body.addEventListener("click", (event) => {
+  const isNavbarClick = navbar.contains(event.target);
+  const isMobileNavClick = mobileNav.contains(event.target);
+  
+  if (!isNavbarClick && !isMobileNavClick && state === 0) {
+    navbar.style.width = '0%';
+    state = 1;
+  }
+});
 
 
 const accountButton = document.getElementById("account")
@@ -158,16 +177,9 @@ const accountButton = document.getElementById("account")
 
 
 // Responsive Nav
-let state = 1;
-function showNav() {
-  if (state === 1) {
-    navbar.style.width = '100%';
-    state = 0;
-  } else {
-    navbar.style.width = '0%';
-    state = 1;
-  }
-}
+
+
+
 
 async function loadLandingPage() {
   createHeroSection();
