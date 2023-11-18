@@ -39,7 +39,8 @@ export async function createPopup(){
         const popup = document.createElement('div');
         popup.classList.add('popup');
         popup.style.height = "50%";
-        popup.style.width = "50%";
+        popup.style.height = "80%";
+
     
         const popupHeader = document.createElement('div');
         popupHeader.classList.add('popup-header');
