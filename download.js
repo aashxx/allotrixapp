@@ -285,6 +285,7 @@ export function downloadPage(){
         contactSalesBtn.disabled = localRememberData ? false : true;
         contactSalesBtn.style.display = "none";
         // contactSales.onclick = contactSales; 🤡
+        contactSalesBtn.onclick = contactSales;
 
         dropDown.addEventListener('change', function () {
             if (dropDown.value === "Premium") {
